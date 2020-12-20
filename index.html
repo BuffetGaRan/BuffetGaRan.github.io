@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Game Đoán Số</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		::-webkit-scrollbar {
+			width: 0px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Đăng nhập -->
+	<div class="login">
+		<div class="platform_login">
+			<label>Tên tài khoản</label>
+			<input type="text" id="txt_user">
+			<label>Mật khẩu</label>
+			<input type="passwors" id="txt_password">
+			<div>
+				<button class="btn_login">LOGIN</button>
+				<button class="btn_reg">REGISTER</button>
+			</div>
+			<p class="p_reg">Bạn chưa có tài khoản ???</p>
+		</div>
+	</div>
+
+	<!-- Container -->
+	<div class="container">
+		<!-- Ô dự đoán -->
+		<div class="box"></div>
+
+		<!-- Bảng trạng thái -->
+		<div class="status">
+			<!-- Tên người chơi -->
+			<div class="player">
+				<p><b>Hello,</b> <i id="name"></i></p>
+			</div>
+			<!-- Cấp độ -->
+			<div class="level info">
+				<p class="title_status">CẤP ĐỘ</p>
+				<p class="txt_status" id="txt_lv"></p>
+			</div>
+			<!-- Điểm số -->
+			<div class="point info">
+				<p class="title_status">ĐIỂM SỐ</p>
+				<p class="txt_status" id="txt_point"></p>
+			</div>
+			<!-- Số lượt chơi -->
+			<div class="turn info">
+				<p class="title_status">LƯỢT CHƠI</p>
+				<p class="txt_status" id="txt_turn"></p>
+			</div>
+			<!-- Nút bấm mua lượt chơi -->
+			<button id="buyTurn">MUA LƯỢT</button>
+		</div>
+
+		<div class="hidden">
+			<!-- Ô chọn dự đoán -->
+			<div class="box_hidden"></div>
+
+			<!-- Bảng mô tả trò chơi ẩn -->
+			<div class="rule_hidden">
+				<div class="close">X</div>
+				<p id="rule_title">Trò chơi đoán số</p>
+				<div class="rule_content">
+					<p id="rule_desc">Mô tả trò chơi</p>
+					<ul>
+						<li>- Ấn vào các ô trên màn hình để chọn kết quả đúng</li>
+						<li>- Khi đã chọn hết các ô trống bạn hãy ấn nút kiểm tra</li>
+						<li>- Nếu đúng thì sẽ hiện thông báo là đúng, sai thì sẽ hiện thông báo là sai</li>
+						<li>- Nếu chữ đổi màu xanh thì nghĩa là vẫn còn kết quả trùng với số bạn đã chọn</li>
+					</ul>
+					<p id="rule_bonus">Phần thưởng</p>
+					<ol>
+						<li>Sau khi qua màn bạn sẽ được cộng 100 điểm</li>
+						<li>Nếu bạn qua màn mà không mất lượt chơi nào thì bạn sẽ được thưởng thêm 100 điểm</li>
+						<li>Cứ sau 1 phút chơi game bạn sẽ được 100 điểm</li>
+						<li>Bạn có thể mua lượt chơi bằng 100 điểm</li>
+					</ol>
+				</div>
+			</div>
+
+			<!-- Bảng đánh giá -->
+			<div class="rate">
+				<div class="rate_edit">
+					<!-- Tổng số lượt dự đoán -->
+					<div id="timePlay">
+						<p class="rate_title">LẦN DỰ ĐOÁN</p>
+						<p class="rate_txt" id="txt_rate_time"></p>
+					</div>
+					<!-- Điểm thưởng -->
+					<div id="bonusPoint">
+						<p class="rate_title">ĐIỂM THƯỞNG</p>
+						<p class="rate_txt" id="txt_rate_point"></p>
+					</div>
+					<!-- Xếp hạng -->
+					<div id="rank">
+						<p class="rate_title">XẾP LOẠI</p>
+						<p class="rate_txt" id="txt_rate_rank"></p>
+					</div>
+				</div>
+				<!-- Nút bấm qua bàn -->
+				<button id="next">QUA BÀN</button>
+			</div>
+		</div>
+		
+		<!-- Nút bấm bắt đầu kiểm tra -->
+		<button id="checkBox"></button>
+
+		<div class="btn">
+			<!-- Nút bấm xem mô tả game -->
+			<button class="rule">HƯỚNG DẪN</button>
+
+			<!-- Nút thoát game -->
+			<button class="exit">THOÁT GAME</button>
+		</div>
+
+		<div class="time">
+			<p id="txt_time"></p>
+		</div>
+	</div>
+
+	<div class="notification">
+		<p id="txt_notification"></p>
+	</div>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/main.js"></script>
+</body>
+
+</html>

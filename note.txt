@@ -1,0 +1,66 @@
+Tên dự án: Đoán số cho sẵn
+Mô tả: Trên màn hình sẽ hiện lên các ô bí mật, và bên dưới sẽ hiện các ô để bạn nhập
+vào kết quả mình dự đoán, sau khi ấn vào nút mở chương trình sẽ kiểm tra bạn có đoán
+đúng kết quả nào không. Trong trường hợp trùng 2 kết quả ở 2 ô khác nhau, nếu kết quả
+hiện màu đỏ thì là hết, là màu xanh thì vẫn còn kết quả đó nhưng tại ô khác. Độ khó
+sẽ tăng theo lv. Lượt chơi bạn có thể mua bằng điểm.
+
+Những thứ cần xử lý:
+--------------------
+1. Giao diện
++ Đăng ký tài khoản -> giao diện chính của trò chơi
+Ý kiến của Tôi:
+    - HTML: Tạo ra 1 Form đăng nhập và form đăng kí tài khoản
+    - Js: Khi người dùng đăng kí thì thông tin sẽ được lưu vào 1 Mảng
+    Nếu thông tin chưa được đăng kí thì sẽ báo là Tài khoản không tồn tại
+    Nếu sai mật khẩu thì báo sai mật khẩu
+
+2. Mảng số random                               - Đã hoàn thành
++ Tạo một mảng số ngẫu nhiên                    - Đã hoàn thành
++ Tạo một mảng gợi ý trùng với số bí mật        - Đã hoàn thành
+3. So sánh số cho sẵn và số bí mật              - Đã hoàn thành 
++ Khi đúng                                      - Đã hoàn thành
++ Khi sai                                       - Đã hoàn thành
++ Khi có 2 số bí mật trong một lần dự đoán thì màu chữ là xanh,
+bình thường là màu đỏ                           - Đã hoàn thành
+4. Số lượt chơi
++ Khi sai 3 lần sẽ thua
++ Khi đoán sai sẽ bị trừ một lượt chơi
++ Khi đổi bằng điểm sẽ cộng một lượt chơi
+5. Điểm thưởng
++ Cứ mỗi lần trả lời đúng được cộng 100đ
++ Cứ mỗi lần qua bàn mà chỉ cần trả lời một lần được cộng 200đ
++ Cứ một lần qua bàn cộng thêm một lượt chơi
++ Sau 10p thưởng một thứ gì đó [hiện time đếm ngược]
+6. Làm nhạc
+7. khi tăng LV1 - 5
+
+Sửa Project
+1. Thay đổi mảng cho sẵn dựa theo mảng đoán, mảng cho sắn = 5; mảng đoán tăng dần
+2. Nếu không có số trong các ô cần đoán sẽ đổi màu
+3. Các số đã dự đoán
+// Nếu còn time làm kiểu window
+
+
+let numberRandom = Math.floor(Math.random() * 30);
+let arr = [];
+let count = 3;
+
+$('#check').click(function(){
+	if(numberRandom == $('#input_text').val()){
+		alert($('#input_text').val() + ' là kết quả đúng');
+		if(count < 3){
+			alert('Những số bạn đã đoán sai: ' + arr + ' ');
+		}
+	}
+	else{
+		count--;
+		alert('Vui lòng nhập lại đáp án, Bạn chỉ còn ' + count + ' lượt');
+		arr.push($('#input_text').val());
+	}
+	if(count == 0){
+		alert('Bạn đã hết lượt chơi');
+	}
+});
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game Toán Học</title>
+	<link rel="stylesheet" type="text/css" href="css/GameToanHoc.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rowdies:wght@700&display=swap" rel="stylesheet">
+	<style>
+		::-webkit-scrollbar {
+			width: 0px;
+		}
+	</style>
+</head>
+<body>
+<div class="main">
+	<div class="container"></div>
+	<div class="guess__box guess__box__P1">
+		<div class="guess__box__item P1"></div>
+		<div class="guess__box__item P1"></div>
+		<div class="guess__box__item P1"></div>
+		<div class="guess__box__item P1"></div>
+		<div class="guess__box__item P1"></div>
+	</div>
+	<div class="guess__box guess__box__P2">
+		<div class="guess__box__item P2"></div>
+		<div class="guess__box__item P2"></div>
+		<div class="guess__box__item P2"></div>
+		<div class="guess__box__item P2"></div>
+		<div class="guess__box__item P2"></div>
+	</div>
+	<div class="clock">
+		<p id="txt_clock"></p>
+	</div>
+	<div class="rate">
+		<p id="txt_rate">...</p>
+		<button id="next">lên lớp</button>
+	</div>
+	<div class="rate_decor">
+		<div class="rate_decor_1"></div>
+		<div class="rate_decor_2"></div>
+		<div class="rate_decor_3"></div>
+		<div class="rate_decor_4"></div>
+	</div>
+	<button id="check">CHECK</button>
+</div>
+<div class="false">
+	<p>BẠN ĐÃ TRẢ LỜI SAI</p>
+</div>
+<button id="start">START</button>
+<!-- <button id="clickme" style="position: absolute;
+bottom: 0">CLICK ME</button> -->
+<button id="out">bỏ học</button>
+
+<audio id="music" src="sound/music.mp3"></audio>
+<audio id="soundClick" src="sound/soundClick.mp3" preload="auto"></audio>
+<audio id="soundWinOneRound" src="sound/soundWinOneRound.mp3" preload="auto"></audio>
+<audio id="soundWinGame" src="sound/soundWinGame.mp3" preload="auto"></audio>
+<audio id="soundFalse" src="sound/soundFalse.mp3" preload="auto"></audio>
+<audio id="soundDanger" src="sound/soundDanger.mp3" preload="auto"></audio>
+<audio id="soundTryAgain" src="sound/soundTryAgain.mp3" preload="auto"></audio>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/GameToanHoc.js"></script>
+</body>
+</html>
